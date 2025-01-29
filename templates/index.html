@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Manager</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/app.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h3 class="center">Employee Management</h3>
+
+        <div class="card-panel">
+            <div class="input-field">
+                <input type="text" id="name" required>
+                <label for="name">Employee Name</label>
+            </div>
+            <div class="input-field">
+                <input type="number" id="salary" required>
+                <label for="salary">Salary</label>
+            </div>
+            <button class="btn waves-effect waves-light blue" onclick="addEmployee()">Add Employee</button>
+        </div>
+
+        <button class="btn green" onclick="fetchEmployees()">Display Employees</button>
+
+        <table class="striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Salary</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="employeeTable"></tbody>
+        </table>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>
